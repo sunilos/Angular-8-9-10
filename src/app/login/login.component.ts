@@ -1,6 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+/**
+ * Login controller 
+ * 
+ * @author Sunil Sahu
+ * @Copyright (c) SunilOS Infotech Pvt Ltd 
+ */
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

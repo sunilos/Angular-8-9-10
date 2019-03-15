@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
+
+/**
+ * Welcome controller
+ * 
+ * @author Sunil Sahu
+ * @Copyright (c) SunilOS Infotech Pvt Ltd* 
+ * 
+ */
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
@@ -7,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  welcomeMsg = 'Welcome to SunilOS';
+  message = 'Welcome to SunilOS !';
 
   constructor() { }
 

@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { AppRoutingModule } from './app-routing.module';
+
 //import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
@@ -10,7 +11,13 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MarksheetlistComponent } from './marksheetlist/marksheetlist.component';
 import { MarksheetComponent } from './marksheet/marksheet.component';
 
-
+/**
+ * Application module configure application conponents 
+ * 
+ * @author Sunil Sahu
+ * @Copyright (c) SunilOS Infotech Pvt Ltd 
+ * 
+ */
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,32 +28,9 @@ import { MarksheetComponent } from './marksheet/marksheet.component';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     FormsModule,
   //  ReactiveFormsModule,
-    RouterModule.forRoot([
-      {
-        path: '',
-        redirectTo: 'login',
-        pathMatch: 'full'
-      },
-      {
-        path: 'login',
-        component: LoginComponent
-      },
-      {
-        path: 'welcome',
-        component: WelcomeComponent
-      },
-      {
-        path: 'marksheet',
-        component: MarksheetComponent
-      },
-      {
-        path: 'marksheetlist',
-        component: MarksheetlistComponent
-      }
-    ])
-
   ],
   providers: [],
   bootstrap: [AppComponent]
