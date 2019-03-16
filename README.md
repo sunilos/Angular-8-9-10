@@ -15,7 +15,7 @@ Login and Welcome page are mapped and accessed by following urls:
 
 See https://github.com/sunilos/SOSAngular/wiki to understand and develop the code.
 
-# Angular key commans 
+# Angular key commands 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
