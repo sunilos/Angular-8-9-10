@@ -1,5 +1,22 @@
 # SOSAngular
 
+This project contains example code of Angular 6. It depicts how you can generate Angular 6 project and create components and run them.
+In this example we have created two components for Welcome and Login page.
+
+1.	Welcome page displays welcome message
+1.	Login page accepts login id and password and authenticate them. After successful authentication login forwards request to Welcome page.
+
+Angular server is started at 4200 default port and accessed from browser using http://localhost:4200 url.
+
+Login and Welcome page are mapped and accessed by following urls:
+
+1.	http://localhost:4200/login
+1.	http://localhost:4200/welcome
+
+See https://github.com/sunilos/SOSAngular/wiki to understand and develop the code.
+
+# Angular key commans 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
 
 ## Development server
