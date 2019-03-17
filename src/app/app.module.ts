@@ -11,6 +11,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MarksheetlistComponent } from './marksheetlist/marksheetlist.component';
 import { MarksheetComponent } from './marksheet/marksheet.component';
 
+import { MarksheetService } from './marksheet.service';
+
+
 /**
  * Application module configure application conponents 
  * 
@@ -32,7 +35,7 @@ import { MarksheetComponent } from './marksheet/marksheet.component';
     FormsModule,
   //  ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [MarksheetService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

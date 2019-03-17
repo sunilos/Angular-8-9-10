@@ -1,3 +1,36 @@
-<p>
-  marksheetlist works!
-</p>
+<H1>Marksheet List</H1>
+
+<p style="color:red" >{{message}}</p>
+
+<table>
+    <tr>
+      <td>Roll No</td>
+      <td><input [(ngModel)]="form.rollNo"  name="rollNo" type="text"></td>
+      <td>Name</td>
+      <td><input [(ngModel)]="form.name"  name="name" type="text"> </td>
+      <td ><button (click)="search()">Search</button></td>
+    </tr>  
+  </table>
+
+<table border="1">
+  <tr>
+    <th>Roll NO</th>
+    <th>Name</th>
+    <th>Physics</th>
+    <th>Chemistry</th>
+    <th>Maths</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+  <tr  *ngFor = "let e of list" >
+    <td>{{e.rollNo}}</td>
+    <td>{{e.name}}</td>
+    <td>{{e.physics}}</td>
+    <td>{{e.chemistry}}</td>
+    <td>{{e.maths}}</td>
+    <td><button (click)="edit(e.id)">Edit</button></td>
+    <td><button (click)="delete(e.id)">Delete</button></td>
+  </tr>
+</table>
+
+

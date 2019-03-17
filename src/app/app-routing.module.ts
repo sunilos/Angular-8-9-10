@@ -29,6 +29,11 @@ const routes: Routes = [
 		component: MarksheetComponent
 	},
 	{
+		//pass route parameter :id
+		path: 'marksheet/:id',
+		component: MarksheetComponent
+	},
+	{
 		path: 'marksheetlist',
 		component: MarksheetlistComponent
 	}
