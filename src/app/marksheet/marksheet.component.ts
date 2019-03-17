@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MarksheetService } from '../marksheet.service';
 
 /**
  * ActivatedRoute is used to read route parameters 
@@ -34,15 +35,20 @@ export class MarksheetComponent implements OnInit {
   /**
    * Inject actived rout object 
    */
-  constructor(private aroute: ActivatedRoute, private router: Router) { }
+  constructor(private aroute: ActivatedRoute, private router: Router, private service:MarksheetService) { }
 
   ngOnInit() {
+    var _self = this;
     this.form.id = parseInt(this.aroute.snapshot.paramMap.get("id"));
-    this.message ="Editing " + this.form.id;
+    this.service.get(this.form.id, function(data){
+      _self.form = data;
+    });
   }
 
   save(){
-    this.message = this.form.name; 
+    this.service.save(this.form, function(data){
+      console.log('Ctl',data);
+    });
   }
 
   search(){
