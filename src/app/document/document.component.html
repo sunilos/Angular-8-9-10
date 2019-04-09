@@ -1,0 +1,62 @@
+<H1>Document</H1>
+
+<span *ngIf = "error;then fail else success"></span>
+<ng-template #success><p style="font-size: 14px; color:green">{{message}} </p></ng-template>
+<ng-template #fail><p style="color:red">{{message}} </p></ng-template>
+
+<form>
+  <table>
+    <tr>
+      <td>Description</td>
+      <td>
+        <input [(ngModel)]="form.description" name="description" type="text">
+        <input type="file" name="file" (change)="setFile($event.target.files)">
+        <button (click)="upload(0)">Upload</button>
+      </td>
+    </tr>
+  </table>
+</form>
+<hr>
+
+<table>
+  <tr>
+    <td>Name</td>
+    <td>
+      <input [(ngModel)]="searhForm.name" name="name" type="text"> </td>
+    <td>Description</td>
+    <td>
+      <input [(ngModel)]="searhForm.description" name="description" type="text">
+    </td>
+    <td>
+      <button (click)="search()">Search</button>
+    </td>
+  </tr>
+</table>
+
+<table border="1">
+  <tr>
+    <th>ID</th>
+    <th>Image </th>
+    <th>NAme</th>
+    <th>Type</th>
+    <th>Description</th>
+    <th>View</th>
+    <th>Delete</th>
+  </tr>
+  <tr *ngFor="let e of list  ">
+    <td>{{e.id}}</td>
+    <td>
+      <img height="100px" src="http://localhost:8080/Document/download/{{e.id}}?tm={{today}}"> <br>
+      <input type="file" name="file" (change)="updateFile(e.id,$event.target.files)" >
+    </td>
+    <td>{{e.name}}</td>
+    <td>{{e.type}}</td>
+    <td>{{e.description}}</td>
+    <td>
+      <a target="_blank" href="http://localhost:8080/Document/download/{{e.id}}">View</a>
+    </td>
+    <td>
+      <button (click)="delete(e.id)">Delete</button>
+    </td>
+  </tr>
+</table>

@@ -6,6 +6,8 @@ import { LoginComponent } from './login/login.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { MarksheetlistComponent } from './marksheetlist/marksheetlist.component';
 import { MarksheetComponent } from './marksheet/marksheet.component';
+import { PipeTestComponent } from './pipe-test/pipe-test.component';
+import { DocumentComponent } from './document/document.component';
 
 /**
  * Constant defines route of application controllers 
@@ -36,7 +38,17 @@ const routes: Routes = [
 	{
 		path: 'marksheetlist',
 		component: MarksheetlistComponent
+	},
+	{
+		path: 'pipe',
+		component: PipeTestComponent
 	}
+	,
+	{
+		path: 'document',
+		component: DocumentComponent
+	}	
+
 ];
 
 /**

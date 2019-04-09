@@ -43,10 +43,15 @@ export class MarksheetComponent implements OnInit {
     this.service.get(this.form.id, function(data){
       _self.form = data;
     });
+ 
+    console.log("------------------>", this.service.today());
+
   }
 
   save(){
+    var _self = this;
     this.service.save(this.form, function(data){
+      _self.message = "Record is successfully saved..";
       console.log('Ctl',data);
     });
   }

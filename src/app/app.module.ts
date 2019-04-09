@@ -13,6 +13,10 @@ import { MarksheetlistComponent } from './marksheetlist/marksheetlist.component'
 import { MarksheetComponent } from './marksheet/marksheet.component';
 
 import { MarksheetService } from './marksheet.service';
+import { PipeTestComponent } from './pipe-test/pipe-test.component';
+import { RsPipe } from './pipe-test/rs';
+import { DocumentComponent } from './document/document.component';
+import { DocumentService } from './service/document.service';
 
 
 /**
@@ -28,16 +32,22 @@ import { MarksheetService } from './marksheet.service';
     LoginComponent,
     WelcomeComponent,
     MarksheetlistComponent,
-    MarksheetComponent
+    MarksheetComponent,
+    PipeTestComponent,
+    RsPipe,
+    DocumentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
-  //  ReactiveFormsModule,
+    //  ReactiveFormsModule,
   ],
-  providers: [MarksheetService],
+  providers: [
+    MarksheetService,
+    DocumentService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
