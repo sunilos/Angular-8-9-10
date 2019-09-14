@@ -16,9 +16,9 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  userId = 'Enter User ID';
-  password = '';
-  message = 'No message';
+  public userId:string = 'Enter User ID';
+  public password:string = '';
+  public message:string  = 'No message';
 
   constructor(private router: Router) { //inject router 
   }

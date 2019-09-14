@@ -7,7 +7,9 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class MarksheetService {
 
-  endpoint = "http://localhost:8080/Marksheet/";
+  //endpoint = "http://localhost:8080/Marksheet/";
+
+  endpoint = "http://nenosystems.in:9080/ORSP10/Marksheet/";
 
   constructor(private http: HttpClient) { }
 
@@ -31,6 +33,7 @@ export class MarksheetService {
     */
 
     var observer = this.http.get(this.endpoint + "get/" + id);
+    
     observer.subscribe(function success(data) {
       response(data);
       console.log("Success", data);

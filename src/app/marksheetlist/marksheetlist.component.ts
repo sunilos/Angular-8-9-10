@@ -57,9 +57,9 @@ export class MarksheetlistComponent implements OnInit {
    */
   search(){
     var _self = this;
-    this.service.search(this.form,function(data){
-      //console.log('Ctl',data);
-      _self.list = data;
+    this.service.search(this.form,function(res){
+      console.log('Ctl',res);
+      _self.list = res.result.data;
     });
   }
 

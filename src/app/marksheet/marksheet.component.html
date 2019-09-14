@@ -1,5 +1,9 @@
 <H1>Marksheet</H1>
-<p style="color:red" >{{message}}</p>
+
+<div *ngIf="success == true; then SUCC else FAIL"></div>
+<ng-template #SUCC ><p style="color:green" >{{message}}</p></ng-template>
+<ng-template #FAIL><p style="color:red" >{{message}}</p></ng-template>
+
 <form >
 <table>
   <tr>

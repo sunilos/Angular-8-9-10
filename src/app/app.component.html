@@ -3,8 +3,23 @@ Main page of application.
 <router-outlet> tage is replaced by routed page.
 You can layout your application here.  
 -->
-<font size="8" > {{title}} </font>
-<img src="http://img.sunilos.com/logo/RaysTecLogoSince2006266x100.jpg" height="50px">
+<table>
+  <tr>
+    <td>
+      <img src="http://img.sunilos.com/logo/RaysTecLogoSince2006266x100.jpg" height="50px">
+    </td>
+    <td>
+      <font size="8"> {{title}} </font>
+    </td>
+  </tr>
+</table>
+<hr>
+<a href="login">Login</a> |
+<a href="welcome">Welcome</a> |
+<a href="marksheet">Marksheet</a> |
+<a href="marksheetlist">Marksheet List</a> |
+<a href="pipe">Pipes</a> |
+<a href="document">Document</a>
 <hr>
 <div>
   <router-outlet></router-outlet>

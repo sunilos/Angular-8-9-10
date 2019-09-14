@@ -32,6 +32,7 @@ export class MarksheetComponent implements OnInit {
 
   message = "";
 
+  success:boolean = true;
   /**
    * Inject actived rout object 
    */
@@ -40,8 +41,8 @@ export class MarksheetComponent implements OnInit {
   ngOnInit() {
     var _self = this;
     this.form.id = parseInt(this.aroute.snapshot.paramMap.get("id"));
-    this.service.get(this.form.id, function(data){
-      _self.form = data;
+    this.service.get(this.form.id, function(res){
+      _self.form = res.result.data;
     });
  
     console.log("------------------>", this.service.today());
@@ -50,9 +51,10 @@ export class MarksheetComponent implements OnInit {
 
   save(){
     var _self = this;
-    this.service.save(this.form, function(data){
+    this.service.save(this.form, function(res){
       _self.message = "Record is successfully saved..";
-      console.log('Ctl',data);
+      _self.success = res.success;
+      console.log('Ctl',res);
     });
   }
 
