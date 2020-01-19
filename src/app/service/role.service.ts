@@ -6,64 +6,80 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RoleService {
 
+  //Rest endpoint
   endpoint = "http://nenosystems.in:9080/ORSP10/Role/";
 
+  /**
+   * Constructor injects HTTP service
+   * 
+   * @param http 
+   */
   constructor(private http: HttpClient) { }
 
   /**
-   * Gets marksheet
+   * Gets Role
    * 
    * @param id 
    * @param response 
    */
-  get(id: number, response) {
-
-    var observer = this.http.get(this.endpoint + "get/" + id);
-
+  get(id: number, responseCB) {
+    let url = this.endpoint + "get/" + id;
+    var observer = this.http.get(url);
     observer.subscribe(function success(data) {
-      response(data);
-      console.log("Success", data);
+      responseCB(data);
     }, function fail(data) {
-      console.log("Fail", data.statusText);
-    });
-
-  }
-
-  /**
-   * Searches Role
-   * 
-   * @param response 
-   */
-  search(form, response) {
-    this.http.post(this.endpoint + "search", form).subscribe((res) => {
-      response(res);
-      console.log("Search", res);
+      responseCB(data, true)
     });
   }
 
   /**
-   * Delets a Role
+   * Delets a role
    * 
    * @param id 
    * @param response 
    */
-  delete(id: number, response) {
-    this.http.get(this.endpoint + "delete/" + id).subscribe((res) => {
-      response(res);
-      console.log("Delete: ", res);
-    });
+  delete(id: number, responseCB) {
+    let url = this.endpoint + "delete/" + id;
+    this.http.get(url).subscribe(
+      (data) => {
+        responseCB(data);
+      },
+      (data) => {
+        responseCB(data, true);
+      });
   }
+
 
   /**
+   * Searches role
    * 
-   * @param form Adds or updates a Role 
    * @param response 
    */
-  save(form, response) {
-    this.http.post(this.endpoint + "save", form).subscribe((data) => {
-      response(data);
-      console.log("Save", data);
-    });
+  search(form, responseCB) {
+    let url = this.endpoint + "search";
+    this.http.post(url, form).subscribe(
+      (data) => {
+        responseCB(data);
+      },
+      (data) => {
+        responseCB(data, true);
+      });
   }
 
+
+  /**
+   * Add/Update role
+   * @param form Adds or updates a record 
+   * @param response 
+   */
+  save(form, responseCB) {
+    let url = this.endpoint + "save";
+    this.http.post(url, form).subscribe(
+      (data) => {
+        responseCB(data);
+      },
+      (data) => {
+        responseCB(data, true);
+      });
+  }
 }

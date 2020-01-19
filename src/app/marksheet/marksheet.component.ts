@@ -33,8 +33,10 @@ export class MarksheetComponent implements OnInit {
     "studentId":1
   };
 
+  //Server message
   message = "";
 
+  //Sever submittion is success or fail
   success:boolean = true;
   /**
    * Injects services 
