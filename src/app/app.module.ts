@@ -12,11 +12,15 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { MarksheetlistComponent } from './marksheetlist/marksheetlist.component';
 import { MarksheetComponent } from './marksheet/marksheet.component';
 
-import { MarksheetService } from './marksheet.service';
+import { MarksheetService } from './service/marksheet.service';
 import { PipeTestComponent } from './pipe-test/pipe-test.component';
 import { RsPipe } from './pipe-test/rs';
 import { DocumentComponent } from './document/document.component';
 import { DocumentService } from './service/document.service';
+import { MyDirDirective } from './my-dir.directive';
+import { RoleComponent } from './role/role.component';
+import { CollegeComponent } from './college/college.component';
+import { CollegeListComponent } from './college-list/college-list.component';
 
 
 /**
@@ -35,7 +39,11 @@ import { DocumentService } from './service/document.service';
     MarksheetComponent,
     PipeTestComponent,
     RsPipe,
-    DocumentComponent
+    DocumentComponent,
+    MyDirDirective,
+    RoleComponent,
+    CollegeComponent,
+    CollegeListComponent
   ],
   imports: [
     BrowserModule,

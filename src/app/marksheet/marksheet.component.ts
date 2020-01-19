@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MarksheetService } from '../marksheet.service';
+import { MarksheetService } from '../service/marksheet.service';
 
 /**
  * ActivatedRoute is used to read route parameters 
@@ -20,13 +20,16 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class MarksheetComponent implements OnInit {
 
+  /**
+   * Marksheet form object
+   */
   form = { 
-    "id":1, 
-    "rollNo":"1",
-    "name":"Rajesh Verma",
-    "physics":99,
-    "chemistry":99,
-    "maths":99,
+    "id":0, 
+    "rollNo":"0",
+    "name":"",
+    "physics":0,
+    "chemistry":0,
+    "maths":0,
     "studentId":1
   };
 
@@ -34,30 +37,50 @@ export class MarksheetComponent implements OnInit {
 
   success:boolean = true;
   /**
-   * Inject actived rout object 
+   * Injects services 
+   * 
+   * @param aroute 
+   * @param router 
+   * @param service 
    */
   constructor(private aroute: ActivatedRoute, private router: Router, private service:MarksheetService) { }
 
+  /**
+   * Display record if primary key is received 
+   */
   ngOnInit() {
     var _self = this;
     this.form.id = parseInt(this.aroute.snapshot.paramMap.get("id"));
-    this.service.get(this.form.id, function(res){
-      _self.form = res.result.data;
-    });
- 
-    console.log("------------------>", this.service.today());
-
+    if ( !isNaN(this.form.id) && this.form.id > 0) {
+      this.service.get(this.form.id, function (res, error) {
+        if (error) {
+          alert("Error:" + error.message);
+          return;
+        }
+        _self.form = res.result.data;
+      });
+    }
   }
 
+  /**
+   * Save a record
+   */
   save(){
     var _self = this;
-    this.service.save(this.form, function(res){
+    this.service.save(this.form, function(res,error){
+      if(error){
+        alert("Error{" + error.message);
+        return;
+      }
       _self.message = "Record is successfully saved..";
       _self.success = res.success;
       console.log('Ctl',res);
     });
   }
 
+  /**
+   * Go to search page 
+   */
   search(){
     this.router.navigateByUrl('/marksheetlist');
   }

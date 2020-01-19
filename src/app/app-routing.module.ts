@@ -8,6 +8,8 @@ import { MarksheetlistComponent } from './marksheetlist/marksheetlist.component'
 import { MarksheetComponent } from './marksheet/marksheet.component';
 import { PipeTestComponent } from './pipe-test/pipe-test.component';
 import { DocumentComponent } from './document/document.component';
+import { CollegeComponent } from './college/college.component';
+import { CollegeListComponent } from './college-list/college-list.component';
 
 /**
  * Constant defines route of application controllers 
@@ -38,6 +40,19 @@ const routes: Routes = [
 	{
 		path: 'marksheetlist',
 		component: MarksheetlistComponent
+	},
+	{
+		path: 'college',
+		component: CollegeComponent
+	},
+	{
+		//pass route parameter :id
+		path: 'college/:id',
+		component: CollegeComponent
+	},
+	{
+		path: 'collegelist',
+		component: CollegeListComponent
 	},
 	{
 		path: 'pipe',

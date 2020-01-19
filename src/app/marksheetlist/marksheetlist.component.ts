@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MarksheetService } from '../marksheet.service';
+import { MarksheetService } from '../service/marksheet.service';
 
 /**
  * Marksheet list controller
@@ -12,32 +12,39 @@ import { MarksheetService } from '../marksheet.service';
 })
 export class MarksheetlistComponent implements OnInit {
 
+  //Server response message
   message = "";
-  
-  list = [ 
-    {"id":1,"rollNo":"1","name":"Rajesh Verma","physics":99,"chemistry":99,"maths":99,"studentId":1,"createdBy":null,"modifiedBy":null,"createdDatetime":null,"modifiedDatetime":null},
-    {"id":2,"rollNo":"88","name":"Ashish Nehra","physics":88,"chemistry":33,"maths":33,"studentId":3,"createdBy":"rahul.sahu@nenosystems.com","modifiedBy":"superadmin@gmail.com","createdDatetime":"2014-07-22T08:20:40.000+0000","modifiedDatetime":"2014-09-29T14:30:38.000+0000"},
-    {"id":8,"rollNo":"11","name":"Manish Sharma","physics":47,"chemistry":47,"maths":14,"studentId":2,"createdBy":null,"modifiedBy":null,"createdDatetime":null,"modifiedDatetime":null}
-  ];
 
-  form = { 
-    "rollNo":"",
-    "name":"",
+  //Contains Marksheet list
+  list = [];
+
+  //Search form 
+  form = {
+    "rollNo": "",
+    "name": "",
   };
 
-  constructor(private router: Router, private service:MarksheetService) { //inject router 
-  }
+  /**
+   * Injects services 
+   * 
+   * @param router 
+   * @param service 
+   */
+  constructor(private router: Router, private service: MarksheetService) { }
 
+  /**
+   * Loads list
+   */
   ngOnInit() {
     this.search(); //Loads list 
   }
 
   /**
-   * Edit record 
+   * Edits a Marksheet 
    * 
    * @param id 
    */
-  edit(id){
+  edit(id) {
     this.router.navigateByUrl('/marksheet/' + id);
   }
 
@@ -45,9 +52,13 @@ export class MarksheetlistComponent implements OnInit {
    * Deletes a record
    * @param id 
    */
-  delete(id){
+  delete(id) {
     var _self = this;
-    this.service.delete(id,function(data){
+    this.service.delete(id, function (res, error) {
+      if (error) {
+        alert("Error " + res.message);
+        return;
+      }
       _self.search();
     });
   }
@@ -55,12 +66,14 @@ export class MarksheetlistComponent implements OnInit {
   /**
    * Searches and get list
    */
-  search(){
+  search() {
     var _self = this;
-    this.service.search(this.form,function(res){
-      console.log('Ctl',res);
+    this.service.search(this.form, function (res, error) {
+      if (error) {
+        alert("Error " + res.message);
+        return;
+      }
       _self.list = res.result.data;
     });
   }
-
 }
