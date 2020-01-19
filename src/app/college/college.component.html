@@ -1,0 +1,37 @@
+<H1>College</H1>
+
+<div *ngIf="success == true; then SUCC else FAIL"></div>
+<ng-template #SUCC ><p style="color:green" >{{message}}</p></ng-template>
+<ng-template #FAIL><p style="color:red" >{{message}}</p></ng-template>
+
+<form >
+<table>
+  <tr>
+    <td>Name (*)</td>
+    <td><input [(ngModel)]="form.name"  name="rollNo" type="text"> {{inputError.name}}  </td>
+  </tr>
+  <tr>
+      <td>Address *</td>
+      <td><input [(ngModel)]="form.address"  name="address" type="text"> {{inputError.address}} </td>
+  </tr>
+  <tr>
+      <td>Phone No * ( 10 Digits) </td>
+      <td><input [(ngModel)]="form.phoneNo"  name="phoneNo" type="text"> {{inputError.phoneNo}} </td>
+  </tr>
+  <tr>
+      <td>City *</td>
+      <td><input [(ngModel)]="form.city"  name="city" type="text"> {{inputError.city}}</td>
+  </tr>
+  <tr>
+      <td>State *</td>
+      <td><input [(ngModel)]="form.state"  name="state" type="text"> {{inputError.state}}</td>
+  </tr>
+  <tr>
+      <td colspan="2">
+        <button (click)="save()">Save</button> 
+        &nbsp; <button (click)="search()">Search</button>
+      </td>
+  </tr>
+</table>
+</form>
+
