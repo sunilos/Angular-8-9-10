@@ -17,7 +17,7 @@ See https://github.com/sunilos/SOSAngular/wiki to understand and develop the cod
 
 # Angular key commands 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
 

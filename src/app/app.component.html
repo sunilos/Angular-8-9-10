@@ -23,8 +23,24 @@ You can layout your application here.
 <a href="pipe">Pipes</a> |
 <a href="document">Document</a>
 <hr>
-<div>
+
+<div >
   <router-outlet></router-outlet>
 </div>
+
 <hr>
-<H4>Copyright (c) {{title}} {{subtitle}}</H4>
+<div class="jumbotron">
+  <h1>Bootstrap 4</h1>
+  <p>This app integrates Bootstrap 4 using following steps</p>
+  <OL>
+    <li>npm install bootstrap --save</li>
+    <li>
+      import your bootstrap css on src\style.css<br>
+      @import "~bootstrap/dist/css/bootstrap.css";
+    </li>
+  </OL>
+</div>
+
+<hr>
+
+<H6>Copyright (c) {{title}} {{subtitle}}</H6>
