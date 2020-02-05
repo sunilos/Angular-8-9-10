@@ -31,6 +31,15 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
+Use following command to deploy your build in /ORS context path (folder)
+
+ng build --base-href /ORS/  --prod
+
+Make sure your links are made by routerlink directive.
+
+<a [routerLink] = "['/welcome']" >Welcome</a> |
+
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
