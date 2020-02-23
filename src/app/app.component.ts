@@ -13,6 +13,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'SunilOS InfoTech Pvt Ltd';
-  subtitle = 'Open Source Learning Center';
+  title = 'Rays Technologies';
+  subtitle = 'Open Source Knowledge Academe';
 }
