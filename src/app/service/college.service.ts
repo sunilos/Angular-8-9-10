@@ -29,14 +29,15 @@ export class CollegeService {
  * @param id 
  * @param response 
  */
-  get(id: number, responseCB) {
+  get(id: number, compCB) {
     let url = this.endpoint + "get/" + id;
-    var observer = this.http.get(url);
-    observer.subscribe(function success(data) {
-      responseCB(data);
-    }, function fail(data) {
-      responseCB(data, true)
-    });
+    var observable = this.http.get(url);
+    observable.subscribe(
+      function success(data) {
+        compCB(data);
+      }, function fail(data) {
+        compCB(data, true)
+      });
   }
 
   /**
@@ -45,14 +46,14 @@ export class CollegeService {
    * @param id 
    * @param response 
    */
-  delete(id: number, responseCB) {
+  delete(id: number, compCB) {
     let url = this.endpoint + "delete/" + id;
     this.http.get(url).subscribe(
       (data) => {
-        responseCB(data);
+        compCB(data);
       },
       (data) => {
-        responseCB(data, true);
+        compCB(data, true);
       });
   }
 
@@ -62,14 +63,14 @@ export class CollegeService {
    * 
    * @param response 
    */
-  search(form, responseCB) {
+  search(form, compCB) {
     let url = this.endpoint + "search";
     this.http.post(url, form).subscribe(
       (data) => {
-        responseCB(data);
+        compCB(data);
       },
       (data) => {
-        responseCB(data, true);
+        compCB(data, true);
       });
   }
 
@@ -79,14 +80,14 @@ export class CollegeService {
    * @param form Adds or updates a record 
    * @param response 
    */
-  save(form, responseCB) {
+  save(form, compCB) {
     let url = this.endpoint + "save";
     this.http.post(url, form).subscribe(
       (data) => {
-        responseCB(data);
+        compCB(data);
       },
       (data) => {
-        responseCB(data, true);
+        compCB(data, true);
       });
   }
 

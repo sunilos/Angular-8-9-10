@@ -10,6 +10,8 @@ import { PipeTestComponent } from './pipe-test/pipe-test.component';
 import { DocumentComponent } from './document/document.component';
 import { CollegeComponent } from './college/college.component';
 import { CollegeListComponent } from './college-list/college-list.component';
+import { OneComponent } from './one/one.component';
+import { TwoComponent } from './two/two.component';
 
 /**
  * Constant defines route of application controllers 
@@ -63,7 +65,16 @@ const routes: Routes = [
 		path: 'document',
 		component: DocumentComponent
 	}	
-
+	,
+	{
+		path: 'one',
+		component: OneComponent
+	}	
+	,
+	{
+		path: 'two',
+		component: TwoComponent
+	}	
 ];
 
 /**

@@ -18,8 +18,12 @@ import { RsPipe } from './pipe-test/rs';
 import { DocumentComponent } from './document/document.component';
 import { DocumentService } from './service/document.service';
 import { MyDirDirective } from './my-dir.directive';
+import { RoleComponent } from './role/role.component';
 import { CollegeComponent } from './college/college.component';
 import { CollegeListComponent } from './college-list/college-list.component';
+import { OneComponent } from './one/one.component';
+import { TwoComponent } from './two/two.component';
+import { DataComponent } from './data/data.component';
 
 
 /**
@@ -40,8 +44,12 @@ import { CollegeListComponent } from './college-list/college-list.component';
     RsPipe,
     DocumentComponent,
     MyDirDirective,
+    RoleComponent,
     CollegeComponent,
-    CollegeListComponent
+    CollegeListComponent,
+    OneComponent,
+    TwoComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
