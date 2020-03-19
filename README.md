@@ -1,6 +1,6 @@
 # SOSAngular
 
-This project contains example code of Angular 6. It depicts how you can generate Angular 6 project and create components and run them.
+This project contains example code of Angular 6/8/10. It depicts how you can generate Angular 6 project and create components and run them.
 In this example we have created two components for Welcome and Login page.
 
 1.	Welcome page displays welcome message
