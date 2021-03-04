@@ -15,6 +15,9 @@ Login and Welcome page are mapped and accessed by following urls:
 
 See https://github.com/sunilos/SOSAngular/wiki to understand and develop the code.
 
+# How to run this project 
+1. Download and execute "npm update" command to update the project dependencies  
+
 # Angular key commands 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
