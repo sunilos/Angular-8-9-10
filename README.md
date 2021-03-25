@@ -1,6 +1,6 @@
 # SOSAngular
 
-This project contains example code of Angular 6/8/10. It depicts how you can generate Angular 6 project and create components and run them.
+This project contains example code of Angular 6/8/10. It depicts how you can generate Angular 8 project and create components and run them.
 In this example we have created two components for Welcome and Login page.
 
 1.	Welcome page displays welcome message
@@ -16,7 +16,9 @@ Login and Welcome page are mapped and accessed by following urls:
 See https://github.com/sunilos/SOSAngular/wiki to understand and develop the code.
 
 # How to run this project 
-1. Download and execute "npm update" command to update the project dependencies  
+1. Download the code and unizip the file or Clone the project  
+2. Update project dependencies using "npm update" command 
+3. Run the project using "ng serve -o" command 
 
 # Angular key commands 
 
