@@ -17,8 +17,8 @@ See https://github.com/sunilos/SOSAngular/wiki to understand and develop the cod
 
 # How to run this project 
 1. Download the code and unizip the file or Clone the project  
-2. Update project dependencies using "npm update" command 
-3. Run the project using "ng serve -o" command 
+2. Update project dependencies using command  "npm update" 
+3. Run the project using command "ng serve -o"
 
 # Angular key commands 
 
