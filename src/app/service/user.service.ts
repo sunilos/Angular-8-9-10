@@ -30,6 +30,11 @@ export class UserService {
     });
   }
 
+  /**
+   * 
+   * @param form Authenicate a User
+   * @param compCB 
+   */
   authenticate(form, compCB) {
     let url = 'http://api.sunilos.com:9080/ORSP10/Auth/login';
     this.http.post(url, form).subscribe(

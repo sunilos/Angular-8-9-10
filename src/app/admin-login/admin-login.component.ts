@@ -64,11 +64,9 @@ export class AdminLoginComponent implements OnInit {
       }
 
       _self.success = res.success;
-      console.log('I1 am here', _self.success);
 
       if (_self.success) {
-        console.log('I am here');
-        localStorage.setItem("user", "User Name");
+        localStorage.setItem("user", res.result.data.firstName);
         _self.router.navigateByUrl('/welcome');
       } else {
         _self.message = "Invalid ID or Password";

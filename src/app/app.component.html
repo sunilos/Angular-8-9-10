@@ -30,7 +30,7 @@ You can layout your application here.
       <a href="two">Two</a> |
     </td>
     <td align="right">
-      Welcome  
+      Welcome  {{getUser()}} | <a [routerLink] = "['/logout']" >Logout</a>
     </td>
   </tr>
 </table>

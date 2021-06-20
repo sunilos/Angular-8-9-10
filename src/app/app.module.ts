@@ -25,7 +25,7 @@ import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
 import { DataComponent } from './data/data.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component';
-
+import { LogoutComponent } from './logout/logout.component';
 /**
  * Application module configure application conponents 
  * 
@@ -50,7 +50,8 @@ import { AdminLoginComponent } from './admin-login/admin-login.component';
     OneComponent,
     TwoComponent,
     DataComponent,
-    AdminLoginComponent
+    AdminLoginComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
