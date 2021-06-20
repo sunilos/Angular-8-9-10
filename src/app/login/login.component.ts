@@ -16,9 +16,9 @@ import { Router } from '@angular/router';
 
 export class LoginComponent implements OnInit {
 
-  public userId:string = 'Enter User ID';
+  public loginId:string = 'Enter Login ID';
   public password:string = '';
-  public message:string  = 'No message';
+  public message:string  = '';
 
   constructor(private router: Router) { //inject router 
   }
@@ -26,8 +26,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * Sign In User
+   */
   signIn(){
-    if(this.userId == 'admin' && this.password =='admin'){
+    if(this.loginId == 'admin' && this.password =='admin'){
       this.router.navigateByUrl('/welcome');
     }else{
       this.message = 'Invalid login id or password'; 

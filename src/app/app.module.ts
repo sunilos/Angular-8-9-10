@@ -24,7 +24,7 @@ import { CollegeListComponent } from './college-list/college-list.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
 import { DataComponent } from './data/data.component';
-
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 /**
  * Application module configure application conponents 
@@ -49,7 +49,8 @@ import { DataComponent } from './data/data.component';
     CollegeListComponent,
     OneComponent,
     TwoComponent,
-    DataComponent
+    DataComponent,
+    AdminLoginComponent
   ],
   imports: [
     BrowserModule,

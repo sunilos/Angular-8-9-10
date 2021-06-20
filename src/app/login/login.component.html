@@ -5,11 +5,13 @@
 <hr>
 
 <form >
-  User ID:&nbsp;&nbsp; <input [(ngModel)]="userId"  name="userId" type="text" required><br> 
-  Password: <input [(ngModel)]="password"   name="password" type="password" required> <br>
-  <button (click)="signIn()">Sign In</button>
-
-  <hr>
-  <p><i>Test login 'admin' and password "admin"</i>  
+<table >
+  <tr><th>User ID:</th><td><input [(ngModel)]="loginId"  name="loginId" type="text" required></td></tr>
+  <tr><th>Password:</th><td><input [(ngModel)]="password"  name="password" type="text" required></td></tr>  
+  <tr><td colspan="2" align ="right" > <button (click)="signIn()">Sign In</button> </td></tr>    
+</table>
 </form>
+<hr>
+<p><i>Test login 'admin' and password "admin"</i>  
+
 

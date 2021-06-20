@@ -12,6 +12,7 @@ import { CollegeComponent } from './college/college.component';
 import { CollegeListComponent } from './college-list/college-list.component';
 import { OneComponent } from './one/one.component';
 import { TwoComponent } from './two/two.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
 
 /**
  * Constant defines route of application controllers 
@@ -26,6 +27,10 @@ const routes: Routes = [
 		path: 'login',
 		component: LoginComponent
 	},
+	{
+		path: 'admin',
+		component: AdminLoginComponent
+	},	
 	{
 		path: 'welcome',
 		component: WelcomeComponent

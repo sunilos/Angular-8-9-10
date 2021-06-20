@@ -1,0 +1,33 @@
+<H1>Login</H1>
+
+<p style="color:red" >{{message}}</p>
+
+<hr>
+
+<form >
+<table >
+  <tr><th>User ID:</th><td><input [(ngModel)]="form.loginId"  name="loginId" type="text" required></td><td style="color:red">{{inputError.loginId}}</td></tr>
+  <tr><th>Password:</th><td><input [(ngModel)]="form.password"  name="password" type="text" required></td><td style="color:red">{{inputError.password}}</td></tr>  
+  <tr><td colspan="2" align ="right" > <button (click)="signIn()">Sign In</button> </td></tr>    
+</table>
+</form>
+<hr>
+<p><i>Test login 'test4321@gmail.com' and password "123456"</i>  
+<HR>
+<table border=1>
+  <tr><th>API:</th><td>Login</td></tr>
+  <tr><th>Request URL:</th><td>http://api.sunilos.com:9080/ORSP10/Auth/login</td></tr>
+  <tr><th>Request Method:</th><td>POST</td></tr>
+  <tr><th>Request Object</th><td> {{getString(form)}}</td></tr>
+  <tr><th>Response Object Input error </th>
+  <td>&#123;"success":false,"result":&#123;"inputerror":&#123;"password":"must not be empty","loginId":"must not be empty"&#125;&#125;&#125;</td>
+  <tr><th>Response Object Fail </th>
+  <td>&#123;"success":false,"result":&#123;"message":"Invalid ID or Password"&#125;&#125;</td>
+  <tr><th>Response Object Success </th>
+  <td>&#123;"success":true,"result":&#123;"data":&#123;"id":13, "firstName":"0","lastName":"0","loginId":"test4321@gmail.com","password":"123456",
+  "email":null,"status":null,"roleName":"Admin","roleId":17,"phone":null,"alternateMobile":null,"dob":null,
+  "gender":null,"imageId":0,"lastLogin":1624192454526&#125;,
+  "jsessionid":"6C4D08275ED01BCBAFA9EAD1C4BFEE98"&#125;&#125;</td>
+  </tr>
+</table>
+
