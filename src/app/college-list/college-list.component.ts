@@ -20,6 +20,8 @@ export class CollegeListComponent implements OnInit {
     "address": "",
   };
 
+  responseObject =null;
+
   /**
    * Injects services 
    * 
@@ -71,7 +73,12 @@ export class CollegeListComponent implements OnInit {
         return;
       }
       _self.list = res.result.data;
+      _self.responseObject = res;
     });
+  }
+
+  getString(obj){
+    return JSON.stringify(obj);
   }
 
 }

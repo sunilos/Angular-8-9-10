@@ -86,5 +86,10 @@ export class MarksheetComponent implements OnInit {
   search(){
     this.router.navigateByUrl('/marksheetlist');
   }
+
+  
+  getString(obj){
+    return JSON.stringify(obj);
+  }
 }
 

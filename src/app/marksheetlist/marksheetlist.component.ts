@@ -24,6 +24,8 @@ export class MarksheetlistComponent implements OnInit {
     "name": "",
   };
 
+  responseObject = null;
+
   /**
    * Injects services 
    * 
@@ -74,6 +76,11 @@ export class MarksheetlistComponent implements OnInit {
         return;
       }
       _self.list = res.result.data;
+      _self.responseObject = res;
     });
+  }
+
+  getString(obj){
+    return JSON.stringify(obj);
   }
 }

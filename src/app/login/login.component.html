@@ -1,16 +1,15 @@
 <H1>Login</H1>
+
 <p style="color:red" >{{message}}</p>
 
 <hr>
-  <input type="text" [value]="message">
-<hr>
 
 <form >
-  User ID:&nbsp;&nbsp; <input [(ngModel)]="userId"  name="userId" type="text"><br> 
-  Password: <input [(ngModel)]="password"   name="password" type="password"> <br>
+  User ID:&nbsp;&nbsp; <input [(ngModel)]="userId"  name="userId" type="text" required><br> 
+  Password: <input [(ngModel)]="password"   name="password" type="password" required> <br>
   <button (click)="signIn()">Sign In</button>
 
   <hr>
-  <p><i>Test valid login 'admin' and password "admin"</i>  
+  <p><i>Test login 'admin' and password "admin"</i>  
 </form>
 

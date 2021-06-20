@@ -107,4 +107,8 @@ export class CollegeComponent implements OnInit {
     this.router.navigateByUrl('/collegelist');
   }
 
+  getString(obj){
+    return JSON.stringify(obj);
+  }
+
 }
